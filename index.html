@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script ></script>
+
+
+</head>
+<body>
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+
+    what line
+    <input type="checkbox" id="brown" value="brown" v-model="checkedLines">
+    <label for="brown">Brown</label>
+    <input type="checkbox" id="red" value="red" v-model="checkedLines">
+    <label for="red">Red</label>
+    <input type="checkbox" id="loop" value="loop" v-model="checkedLines">
+    <label for="loop">The Loop</label>
+
+
+    <br>
+    <br>
+
+    <b-list-group v-for="(line, index) in checkedLines">
+        <b-list-group-item v-bind:id="index">
+            {{ line }}
+        </b-list-group-item>
+    </b-list-group>
+
+    <br>
+    <br>
+
+
+    Select what stop you are at
+    <br>
+    <select v-model="selectedStop">
+        <option disabled value="">Please select one</option>
+        <option value="Kimball">Kimball</option>
+        <option value="Kedzie">Kedzie</option>
+        <option value="Francisco">Francisco</option>
+        <option value="Rockwell">Rockwell</option>
+        <option value="Western">Western</option>
+        <option value="Damen">Damen</option>
+        <option value="Montrose">Montrose</option>
+        <option value="Irving Park">Irving Park</option>
+        <option value="Addison">Addison</option>
+        <option value="Paulina">Paulina</option>
+        <option value="Southport">Southport</option>
+        <option value="Belmont">Belmont</option>
+        <option value="Wellington">Wellington</option>
+        <option value="Diversey">Diversey</option>
+        <option value="Fullerton">Fullerton</option>
+        <option value="Armitage">Armitage</option>
+        <option value="Sedgwick">Sedgwick</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Merchandise Mart">Merchandise Mart</option>
+        <option value="Washington/Wells">Washington/Wells</option>
+        <option value="Quincy">Quincy</option>
+        <option value="LaSalle/Van Buren">LaSalle/Van Buren</option>
+        <option value="Harold Washington Library">Harold Washington Library</option>
+        <option value="Adams/Wabash">Adams/Wabash</option>
+        <option value="Washington/Wabash">Washington/Wabash</option>
+        <option value="State/Lake">Stake/Lake</option>
+        <option value="Clark/Lake">Clark/Lake</option>
+    </select>
+
+
+    <br>
+    <br>
+
+    Select how far you are willing to go
+    <br>
+    <select v-model="selectedStopDistance">
+        <option disabled value="">Please select one</option>
+        <option value="1">1 stop away</option>
+        <option value="2">2 stops away</option>
+        <option value="3">3 stops away</option>
+        <option value="4">4 stops away</option>
+        <option value= "5">5 stops away</option>
+        <option value="any stops">any stop</option>
+    </select>
+
+
+    <br>
+    <br>
+
+    Select how far you are willing to walk
+    <br>
+    <select v-model="selectedWalkDistance">
+        <option disabled value="">Please select one</option>
+        <option value="1">1 block away</option>
+        <option value="2">2 blocks away</option>
+        <option value="3">3 blocks away</option>
+        <option value="4">4 blocks away</option>
+        <option value="4">half mile away</option>
+    </select>'
+
+    <br>
+    <br>
+
+    <span>Line(s): {{ checkedLines }} </span>
+    <br>
+    <span>Stop: {{ selectedStop }} Stop Distance: {{ selectedStopDistance }} Walk Distance: {{ selectedWalkDistance }}</span>
+
+
+
+
+
+</div>
+
+<script>
+
+    var urlParams = new URLSearchParams(window.location.search);
+
+    var SelectPage2 = new Vue({
+        el: '#app',
+        data: {
+            checkedLines:[],
+            selectedStop: "",
+            selectedStopDistance: "",
+            selectedWalkDistance: ""
+
+        },
+        methods: {
+
+        }
+    });
+
+
+
+</script>
